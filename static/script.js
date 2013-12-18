@@ -80,32 +80,20 @@ var flag = true;
 	$('#objectperm').click(function(e){
 		if(flag)
 			$(e.target).animate({width:'1229px', height:'922px' }, 150, function(){
-            $('#thepiece').toggle(100);
-			$('#moreby').toggle(100);
-			$('#gone').toggle(100);
+            $('#thepiece').toggle(1);
+			$('#moreby').toggle(1);
+			$('#gone').toggle(1);
 			});
 
 		else
         $(e.target).animate({width:'512px', height: '384px'}, 150, function(){
-            $('#thepiece').toggle(50);
-			$('#moreby').toggle(50);
-			$('#gone').toggle(50);
+            $('#thepiece').toggle(1);
+			$('#moreby').toggle(1);
+			$('#gone').toggle(1);
         });
     flag=!flag;
 });
 
-	
-	// $('#objectperm').click(function() {
-		// $('#objectperm').toggle(500);
-		// {$(this).css('width', function(_, cur){
-		// return cur === '512px' ? '100%' : '870px'
-		// });
-	// });
-	// });
-	// $('#objectperm').click(function ()
-	// {$(this).css('height', function(_, cur){
-		// return cur === '384px' ? '100%' : '652px'
-		// });
-	// });
+
 });
 
