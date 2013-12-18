@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+	<ol>
+		{% for p in posts %}
+		
+		<li>{{ p.render() | safe }} </li>
+		
+			</br>
+		{% endfor %}
+	</ol>
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}

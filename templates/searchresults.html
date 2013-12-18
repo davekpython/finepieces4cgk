@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+	
+	<ol>
+		{% for p in thesearch %}
+		
+		<li>{{ p.render() | safe }}</li>
+		
+			<br><br>
+		{% endfor %}
+	</ol>
+	
+	<div class="error">{{error}}</div>
+
+{% endblock %}

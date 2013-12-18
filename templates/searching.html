@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Fill in the search</h2>
+	
+		<form method="post">
+			<label>
+				<div>Artist</div>
+				<input type="text" name="artist" value="{{artist}}">
+			</label>
+			<label>
+				<div>Subject</div>
+				<input type="text" name="subject" value="{{subject}}">
+			</label>
+			
+			<label>
+				<div>Notes</div>
+				<textarea name="content">{{content}}</textarea>
+			</label>
+			
+			<div class="error">{{error}}</div>
+			
+			<input type="submit">
+		</form>
+
+{% endblock %}

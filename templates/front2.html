@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+			<table border="1">
+			<tr>
+		{% for p in posts %}
+		
+	
+			<td><img src= "/download-art-objects/{{p.key()}}" alt="DgK Cafe" class="objectsfront2"> </td>
+			<!-- <td>row 1, cell 2</td> -->
+
+
+			</tr>
+<!-- 			<tr>
+			<td>row 2, cell 1</td>
+			<td>row 2, cell 2</td>
+			</tr> -->
+			</table> 
+		
+<!-- 		<li>{{ p.render() | safe }} </li>
+		
+			</br> -->
+		{% endfor %}
+	
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}

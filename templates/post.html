@@ -1,0 +1,24 @@
+<div class="post">
+
+
+
+		<div class="post-heading">
+	
+			<div> 
+				<a class="post-title" href="{{'blog/%s' % (p.key().id())}}">
+					{{p.subject}} by {{p.artist}}      <img src= "/download-art-objects/{{p.key()}}"  width=51px height = 38px;> 
+				</a>
+			</div>
+			
+			<div class="post-date">
+				{{p.local_time().strftime("%b %d, %Y %I:%M:%S %p %z")}}
+			</div>
+		
+		</div>
+
+		<div class="post-content">
+			{{p._render_text | safe}}
+		</div>
+	
+
+</div>

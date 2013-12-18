@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Welcome</title>
+		
+		<link type="text/css" rel="stylesheet" href="/static/opening.css" />
+
+	</head>
+	
+	<body>
+		<h2 id="h2"  >Welcome, {{username}}</h2>
+		<br>
+		<br>
+
+
+						<form id="welcent" name="searchform" action="/search" method="post" >
+						
+							<input id="welsearch" type="text" name = "action" value="{{action}}" " placeholder="Search"></input>
+
+							<input id="welsubmit" type="submit" value="Go" ></input>
+							
+						</form>
+
+
+	</body>
+</html>

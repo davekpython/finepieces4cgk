@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2 id="finepiece">A New Fine Piece</h2>
+	
+		<form method="post" id="newpiece" action="{{ upload_url }}" enctype="multipart/form-data">
+			<div id="newartist">
+				<div>Artist</div>
+				<input type="text" name="artist" value="{{artist}}">
+			</div>
+			
+			<div id="newtitle">
+				<div>Title</div>
+				<input type="text" name="title" value="{{title}}">
+			</div>
+			
+			<div id="newmedium">
+				<div>Medium</div>
+				<input type="text" name="medium" value="{{medium}}">
+			</div>
+			
+			<div id="newob_date">
+				<div>Date Completed</div>
+				<input type="text" name="made" value="{{made}}">
+			</div>			
+				
+			<div id="newprovenance">
+				<div>Provenance</div>
+				<input type="text" name="provenance" value="{{provenance}}">
+			</div>
+				
+			<div id="newvaluation">
+				<div>Valuation</div>
+				<input type="text" name="valuation" value="{{valuation}}">
+			</div>
+				
+			<div id="newsubject">
+				<div>Subject</div>
+				<input type="text" name="subject" value="{{subject}}">
+			</div>
+			
+			<div id="newobject">
+				<div>Where's the piece?</div>
+				<input type="file" name="art_object" value="{{art_object}}">
+			</div>
+			
+			<div id="newremarks">
+				<div>Remark</div>
+				<textarea rows="5" cols="30" name="remark">{{remark}}</textarea>
+			</div>
+			
+			<div id="newerror">{{error}}</div>
+			
+			<input id="newsubmit" type="submit" name = "submit" value = "Submit">
+		</form>
+		
+
+	{% endblock %}
