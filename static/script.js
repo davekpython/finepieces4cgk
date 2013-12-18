@@ -79,7 +79,7 @@ $(document).ready(function() {
 var flag = true;
 	$('#objectperm').click(function(e){
 		if(flag)
-			$(e.target).animate({width:'1024px', height:'768px' }, 150, function(){
+			$(e.target).animate({width:'1229px', height:'922px' }, 150, function(){
             $('#thepiece').toggle(100);
 			$('#moreby').toggle(100);
 			$('#gone').toggle(100);
@@ -87,9 +87,9 @@ var flag = true;
 
 		else
         $(e.target).animate({width:'512px', height: '384px'}, 150, function(){
-            $('#thepiece').toggle(100);
-			$('#moreby').toggle(100);
-			$('#gone').toggle(100);
+            $('#thepiece').toggle(50);
+			$('#moreby').toggle(50);
+			$('#gone').toggle(50);
         });
     flag=!flag;
 });
