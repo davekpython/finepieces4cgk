@@ -75,13 +75,7 @@
 			
 		</form>
 
-		<!-- <div id="permfooter"> -->
-		
-<!-- 			<div id="trashed">
-				<a href="{{'/trashed'}}">
-					<span>The Trash</span>
-				</a>
-			</div>		 -->
+
 
 			<form id="gone" action="{{'/remove/%s' % (post.key().id())}}" method="post"  enctype="multipart/form-data">
 				<input type="submit" value="Remove">
@@ -89,7 +83,7 @@
 	
 			<div class="ageplace">{{age}}</div>
 	
-	<!-- 	</div> -->
+	
 
 
 {% endblock %}
