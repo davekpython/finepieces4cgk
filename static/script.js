@@ -80,12 +80,16 @@ var flag = true;
 	$('#objectperm').click(function(e){
 		if(flag)
 			$(e.target).animate({width:'1024px', height:'768px' }, 150, function(){
-            //do stuff after animation
+            $('#thepiece').toggle(100);
+			$('#moreby').toggle(100);
+			$('#gone').toggle(100);
 			});
 
 		else
         $(e.target).animate({width:'512px', height: '384px'}, 150, function(){
-            //do stuff after animation
+            $('#thepiece').toggle(100);
+			$('#moreby').toggle(100);
+			$('#gone').toggle(100);
         });
     flag=!flag;
 });
