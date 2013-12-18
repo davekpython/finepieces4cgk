@@ -60,7 +60,7 @@ $(document).ready(function() {
 	$('#edit-remark').click(function() {
 		$('#edit-remark').show();
 		$('#edit-remark span').hide();
-		var value = $("edit-remark span").text();
+		var value = $("#edit-remark span").text();
 		$('#text_remark').val(value);
 		$('#text_remark').show();
 	});

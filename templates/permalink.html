@@ -57,7 +57,7 @@
 					<input type="text" name="updateprovenance" value="{{updateprovenance}}" placeholder="Update Provenance">
 				</div>
 
-			<div id="valuation">Valuation:</div>
+			<div id="valuation">Valuation:  $</div>
 				<div id="edit-valuation" class ="stuff">
 					<span>{{post.valuation | safe}}</span>
 					<input type="text" name="updatevaluation" value="{{updatevaluation}}" placeholder="Update Valuation">
@@ -70,10 +70,10 @@
 				<div id="edit-remark" class="stuff">
 					<span>{{post.remark | safe}}</span>
 				<!-- 	<input type="textarea" rows="4" cols="5" maxlength="50" name="updateremark" value="{{updateremark}}" placeholder="Update Remark"> -->
-					<textarea id="text_remark" rows="5" cols="30" name="updateremark"value="{{updateremark}}" placeholder="Update Remark">{{updateremarks}}</textarea>
+					<textarea id="text_remark" rows="10" cols="30" name="updateremark"value="{{updateremark}}" placeholder="Update Remark">{{updateremark}}</textarea>
 				</div>
 			
-			<input type="submit" id="submit" name = "submit" value = "Submit">
+			<input type="submit" id="submit" name = "submit" value = "Submit">	
 			
 		</form>
 
@@ -81,7 +81,10 @@
 
 			<form id="gone" action="{{'/remove/%s' % (post.key().id())}}" method="post"  enctype="multipart/form-data">
 				<input type="submit" value="Remove">
+				
 			</form>
+			
+
 	
 			<div class="ageplace">{{age}}</div>
 	
