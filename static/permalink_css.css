@@ -14,7 +14,7 @@
 	width: 800px;
 	margin-left: 500px;
 	/* margin-right: 10% */
-	margin-top:-30px;
+	margin-top:100px;
 	
 	}
 
@@ -289,14 +289,15 @@
 }
 
 #gone		{
-	position: relative;
+	position: absolute;
 	/* display: inline-block; */
 	width: 92px;
 	text-align: center;
-	background-color: #600000;
+	background-color: #D0D0D0;
+	color:#FF0000;
 	border-style: solid;
-	margin-left: -125px;
-	margin-top: -100px;
+	margin-left: -140px;
+	margin-top: -270px;
 }
 
 #trashed	{
@@ -314,16 +315,16 @@
 #moreby	{
 	border: solid;
 	display: inline-box;
-	position: static;
+	position: absolute;
 	margin-top: -4px;
 	margin-left: -160px;
-	padding: 10px 5px 5px 5px;
+	padding: 10px 5px 5px 10px;
 	font-size: 15px;
 	background-color: #F0F0F0;
 	color: #000000;
-	width: 150px;
+	width: 200px;
 	height: 25px;
-	text-align: center;
+	text-align: left;
 	text-decoration: none;
 }
 
@@ -331,10 +332,11 @@
 	border: none;
 	border-left: none;
 	display: inline-box;
-	position: relative;
-	margin-top: 1px;
-	margin-left: 2px;
+	position: absolute;
+	margin-top: 0;
+	margin-left: 4px;
 	font-size: 15px;
+	font-weight: 700;
 	background-color: #F0F0F0;
 	color: #000000;
 }
