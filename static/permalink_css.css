@@ -12,9 +12,9 @@
 #thepiece	{
 	display:inline-block;
 	width: 800px;
-	margin-left: 500px;
+	margin-left: 550px;
 	/* margin-right: 10% */
-	margin-top:100px;
+	margin-top:50px;
 	
 	}
 
@@ -297,7 +297,7 @@
 	color:#FF0000;
 	border-style: solid;
 	margin-left: -140px;
-	margin-top: -270px;
+	margin-top: -230px;
 }
 
 #trashed	{
