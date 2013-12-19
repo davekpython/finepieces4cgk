@@ -567,7 +567,7 @@ class Bymade(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		for p in posts:
 			if p.trash!="True":
 				not_trashed_list.append(p)		
-		val=6
+		val=5
 		sortedlist= sorter(not_trashed_list, val)
 
 		for group in chunk(sortedlist, 4):
