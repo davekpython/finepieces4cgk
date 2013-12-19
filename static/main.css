@@ -289,3 +289,16 @@ nav	{
 	height: 19px;
 	margin-left: 10px;
 }
+
+#dump_trash	{
+	position: relative;
+	display: inline-block;
+	margin: 420px 5px 5px -160px;
+	width: 155px;
+	height: 30px;
+	border-style: solid;
+	text-align:center;
+	color: #C00000;
+	background:#D8D8D8;
+	padding-top:5px;
+}
