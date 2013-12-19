@@ -4,6 +4,13 @@
 	<h2 id="finepiece">A New Fine Piece</h2>
 	
 		<form method="post" id="newpiece" action="{{ upload_url }}" enctype="multipart/form-data">
+		
+			<div id="newobject">
+				<div>Where is it?</div>
+				<input type="file" name="art_object" value="{{art_object}}">
+			</div>
+			<p></p>		
+		
 			<div id="newartist">
 				<div>Artist</div>
 				<input type="text" size="40" name="artist" value="{{artist}}">
@@ -41,11 +48,7 @@
 				<input type="text" size="40" name="subject" value="{{subject}}">
 			</div>
 			<p></p>
-			<div id="newobject">
-				<div>Where's the piece?</div>
-				<input type="file" name="art_object" value="{{art_object}}">
-			</div>
-			<p></p>
+
 			<div id="newremarks">
 				<div>Notes</div>
 				<textarea rows="10" cols="50" name="remark">{{remark}}</textarea>
