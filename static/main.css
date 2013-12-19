@@ -38,16 +38,25 @@ body {
 	margin-top: 100px;
 	position: absolute;
 	padding-left: 5px;
+
 }
 
 #left-link1	{
+	display:inline:block;
+	position: absolute;
 	margin-left:2px;
-	margin-top: 10px;
+	margin-top: 5px;
+	margin-bottom:10px;
 	font-size:	15px;
+	font-weight: 700;
 	text-decoration: none;
+	padding-bottom: 15px;
+	padding-top: 5px;
 }
 
 .left-links	{
+	display:inline-block;
+	position: relative;
 	margin-left: 10px;
 	margin-top: 10px;
 	font-size: 15px;
@@ -291,14 +300,17 @@ nav	{
 }
 
 #dump_trash	{
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	margin: 420px 5px 5px -160px;
 	width: 155px;
 	height: 30px;
 	border-style: solid;
+	border-color: #000000;
 	text-align:center;
+	font-size: 16px;
+	font-weight: 700;
 	color: #C00000;
 	background:#D8D8D8;
-	padding-top:5px;
+	padding-top:10px;
 }
