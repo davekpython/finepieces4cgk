@@ -6,49 +6,51 @@
 		<form method="post" id="newpiece" action="{{ upload_url }}" enctype="multipart/form-data">
 			<div id="newartist">
 				<div>Artist</div>
-				<input type="text" name="artist" value="{{artist}}">
+				<input type="text" size="40" name="artist" value="{{artist}}">
 			</div>
+			
+			<p></p>
 			
 			<div id="newtitle">
 				<div>Title</div>
-				<input type="text" name="title" value="{{title}}">
+				<input type="text" size="40" name="title" value="{{title}}">
 			</div>
-			
+			<p></p>
 			<div id="newmedium">
 				<div>Medium</div>
-				<input type="text" name="medium" value="{{medium}}">
+				<input type="text" size="40" name="medium" value="{{medium}}">
 			</div>
-			
+			<p></p>
 			<div id="newob_date">
 				<div>Date Completed</div>
-				<input type="text" name="made" value="{{made}}">
+				<input type="text" size="40" name="made" value="{{made}}">
 			</div>			
-				
+			<p></p>	
 			<div id="newprovenance">
 				<div>Provenance</div>
-				<input type="text" name="provenance" value="{{provenance}}">
+				<input type="text" size="40" name="provenance" value="{{provenance}}">
 			</div>
-				
+			<p></p>	
 			<div id="newvaluation">
 				<div>Valuation</div>
-				<input type="text" name="valuation" value="{{valuation}}">
+				<input type="text" size="40" name="valuation" value="{{valuation}}">
 			</div>
-				
+			<p></p>	
 			<div id="newsubject">
 				<div>Subject</div>
-				<input type="text" name="subject" value="{{subject}}">
+				<input type="text" size="40" name="subject" value="{{subject}}">
 			</div>
-			
+			<p></p>
 			<div id="newobject">
 				<div>Where's the piece?</div>
 				<input type="file" name="art_object" value="{{art_object}}">
 			</div>
-			
+			<p></p>
 			<div id="newremarks">
-				<div>Remark</div>
-				<textarea rows="5" cols="30" name="remark">{{remark}}</textarea>
+				<div>Notes</div>
+				<textarea rows="10" cols="50" name="remark">{{remark}}</textarea>
 			</div>
-			
+			<p></p>
 			<div id="newerror">{{error}}</div>
 			
 			<input id="newsubmit" type="submit" name = "submit" value = "Submit">
