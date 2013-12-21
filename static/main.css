@@ -38,16 +38,30 @@ body {
 	margin-top: 100px;
 	position: absolute;
 	padding-left: 5px;
+
+}
+
+#leftbankby	{
+	display:inline-block;
+	margin-top: 20px;
 }
 
 #left-link1	{
+	display:inline-block;
+	position: absolute;
 	margin-left:2px;
-	margin-top: 10px;
+	margin-top: 5px;
+	margin-bottom:60px;
 	font-size:	15px;
+	font-weight: 700;
 	text-decoration: none;
+	padding-bottom: 15px;
+	padding-top: 5px;
 }
 
 .left-links	{
+	display:inline-block;
+	position: relative;
 	margin-left: 10px;
 	margin-top: 10px;
 	font-size: 15px;
@@ -55,61 +69,141 @@ body {
 }
 
 #newpiece	{
+	display:inline-block;
+	width: 800px;
 	position: relative;
 	margin-left: 150px;
-	margin-top: 20px;
+	margin-top: -10px;
 }
 
 #newartist	{
 	display: inline-block;
 	position: relative;
-	margin-left: 50px;
+	margin-left: 10px;
 	margin-top: 20px;
+	
 }
 
 #newartist div	{
 	display: inline-block;
 	position: relative;
-	margin-left: -10px;
+	margin-left: 20px;
+}
+
+#newtitle	{
+	display: inline-block;
+	position: relative;
+	margin-left: 10px;
+	margin-top: 20px;
+	
+}
+
+#newtitle div	{
+	display: inline-block;
+	position: relative;
+	margin-left: 30px;
+}
+
+#newmedium	{
+	display: inline-block;
+	position: relative;
+	margin-left: -22px;
+	margin-top: 20px;
+	
+}
+
+#newmedium div	{
+	display: inline-block;
+	position: relative;
+	margin-left: 30px;
+}
+
+#newob_date	{
+	display: inline-block;
+	position: relative;
+	margin-left: -22px;
+	margin-top: 20px;
+	
+}
+
+#newob_date div	{
+	display: inline-block;
+	position: relative;
+	margin-left: -45px;
+}
+
+#newprovenance	{
+	display: inline-block;
+	position: relative;
+	margin-left: -55px;
+	margin-top: 20px;
+	
+}
+
+#newprovenance div	{
+	display: inline-block;
+	position: relative;
+	margin-left: 30px;
+}
+
+#newvaluation	{
+	display: inline-block;
+	position: relative;
+	margin-left: -32px;
+	margin-top: 20px;
+	
+}
+
+#newvaluation div	{
+	display: inline-block;
+	position: relative;
+	margin-left: 30px;
 }
 
 #newsubject	{
 	display: inline-block;
 	position: relative;
-	margin-left: 50px;
-	margin-top: 30px;
+	margin-left: -8px;
+	margin-top: 20px;
 }
 
 #newsubject div	{
 	display: inline-block;
+	position: relative;
+	margin-left: 20px;
 }
 
 #newobject	{
 	display: inline-block;
 	position: relative;
-	margin-left: 50px;
-	margin-top: 50px;
+	margin-left: -22px;
+	margin-top: 20px;
 }
 
 #newobject div	{
 	display: inline-block;
+	position: relative;
+	margin-left: 20px;
 }
 
-#newnotes	{
+#newremarks	{
 	display: inline-block;
 	position: relative;
-	margin-left: 50px;
-	margin-top: 75px;
+	margin-left: 80px;
+	margin-top: 10px;
 }
 
-#newnotes div	{
+#newremarks div	{
 	display: inline-block;
+	position: absolute;
+	margin-left: -60px;
+	margin-top:-1px;
 }
 
 #newsubmit	{
-	position: relative;
-	margin-left: 98%;
-	margin-top: 20px;
+	position: absolute;
+	margin-left: -250px;
+	margin-top: -400px;
 }
 
 #finepiece	{
@@ -288,4 +382,20 @@ nav	{
 	width: 25px;
 	height: 19px;
 	margin-left: 10px;
+}
+
+#dump_trash	{
+	position: absolute;
+	display: inline-block;
+	margin: 420px 5px 5px -160px;
+	width: 155px;
+	height: 30px;
+	border-style: solid;
+	border-color: #000000;
+	text-align:center;
+	font-size: 16px;
+	font-weight: 700;
+	color: #C00000;
+	background:#D8D8D8;
+	padding-top:10px;
 }

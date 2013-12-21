@@ -11,7 +11,7 @@
 					{% for pic in p %}
 				
 						<td>
-							<a href="{{'/blog/%s' % (pic.key().id())}}"> 
+							<a href="{{'onedate/%s' % (pic.key().id())}}"> 
 								<div id="byartist">{{ pic.made }}</div>
 							</a>
 						</td>

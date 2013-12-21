@@ -567,8 +567,8 @@ class Bymade(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		for p in posts:
 			if p.trash!="True":
 				not_trashed_list.append(p)		
-		val=5
-		sortedlist= sorter(not_trashed_list, val)
+		val=6
+		sortedlist= sorter(not_trashed_list, val, single=True)
 
 		for group in chunk(sortedlist, 4):
 			thelist.append(group)
@@ -666,7 +666,7 @@ class Oneprovenance(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandl
 		key = db.Key.from_path('Post', int(post_id), parent=blog_key())
 		post = db.get(key)
 		upload_url = blobstore.create_upload_url('/blog/%s' % str(post.key().id()))
-		# upload_url = blobstore.create_upload_url('/oneartist')
+		
 		posts, age = top_posts()
 		provenance = post.get(key)
 		one_provenance=list()
@@ -691,7 +691,7 @@ class Onemedium(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		key = db.Key.from_path('Post', int(post_id), parent=blog_key())
 		post = db.get(key)
 		upload_url = blobstore.create_upload_url('/blog/%s' % str(post.key().id()))
-		# upload_url = blobstore.create_upload_url('/oneartist')
+		
 		posts, age = top_posts()
 		medium = post.get(key)
 		one_medium=list()
@@ -709,14 +709,40 @@ class Onemedium(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		for group in chunk(one_medium, 4):
 			users.append(group)
 				
-		self.render("onemedium.html", posts = posts, upload_url = upload_url, users = users, medium = medium )		
+		self.render("onemedium.html", posts = posts, upload_url = upload_url, users = users, medium = medium )
+
+class Onedate(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
+	def get(self, post_id):
+		key = db.Key.from_path('Post', int(post_id), parent=blog_key())
+		post = db.get(key)
+		upload_url = blobstore.create_upload_url('/blog/%s' % str(post.key().id()))
+		
+		posts, age = top_posts()
+		the_date = post.get(key)
+		one_date=list()
+		not_trashed_list=list()
+
+		for p in posts:
+			if p.trash!="True":
+				not_trashed_list.append(p)		
+		
+		for p in not_trashed_list:
+			if p.made == the_date.made:
+				one_date.append(p)
+
+		users=list()
+		for group in chunk(one_date, 4):
+			users.append(group)
+				
+		self.render("onedate.html", posts = posts, upload_url = upload_url, users = users, the_date = the_date )
+		
 		
 class Oneartist(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 	def get(self, post_id):
 		key = db.Key.from_path('Post', int(post_id), parent=blog_key())
 		post = db.get(key)
 		upload_url = blobstore.create_upload_url('/blog/%s' % str(post.key().id()))
-		# upload_url = blobstore.create_upload_url('/oneartist')
+		
 		posts, age = top_posts()
 		artist = post.get(key)
 		oneartist=list()
@@ -757,6 +783,7 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/bymade', Bymade),
 								('/oneartist/([0-9]+)(?:\.json)?', Oneartist),
 								('/onemedium/([0-9]+)(?:\.json)?', Onemedium),
+								('/onedate/([0-9]+)(?:\.json)?', Onedate),
 								('/oneprovenance/([0-9]+)(?:\.json)?', Oneprovenance),
 								('/remove/([0-9]+)(?:\.json)?', Remove),
 								('/delete/([0-9]+)(?:\.json)?', Delit),
