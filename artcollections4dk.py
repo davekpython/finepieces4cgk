@@ -778,7 +778,7 @@ class Onevaluation(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandle
 				not_trashed_list.append(p)		
 		
 		for p in not_trashed_list:
-			if p.artist == artist.artist:
+			if p.valuation == artist.valuation:
 				oneartist.append(p)
 
 		users=list()
