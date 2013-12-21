@@ -9,6 +9,17 @@
 	border-style:solid;	
 }
 
+#objectnonperm	{
+	display: inline-block;
+	position: relative;
+	width: 512px;
+	height: 384px;
+	margin-left: 200px;
+	margin-right: 20px;
+	margin-bottom: 2px;
+	border-style:solid;	
+}
+
 #thepiece	{
 	display:inline-block;
 	width: 800px;
