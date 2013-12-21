@@ -762,6 +762,31 @@ class Oneartist(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 				
 		self.render("oneartist.html", posts = posts, upload_url = upload_url, users = users, artist = artist )
 			
+class Onevaluation(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
+	def get(self, post_id):
+		key = db.Key.from_path('Post', int(post_id), parent=blog_key())
+		post = db.get(key)
+		upload_url = blobstore.create_upload_url('/blog/%s' % str(post.key().id()))
+		
+		posts, age = top_posts()
+		artist = post.get(key)
+		oneartist=list()
+		not_trashed_list=list()
+
+		for p in posts:
+			if p.trash!="True":
+				not_trashed_list.append(p)		
+		
+		for p in not_trashed_list:
+			if p.artist == artist.artist:
+				oneartist.append(p)
+
+		users=list()
+		for group in chunk(oneartist, 4):
+			users.append(group)
+				
+		self.render("onevaluation.html", posts = posts, upload_url = upload_url, users = users, artist = artist )			
+			
 class Flush(BlogHandler):
 	def get(self):
 		key = 'top'
@@ -784,6 +809,7 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/oneartist/([0-9]+)(?:\.json)?', Oneartist),
 								('/onemedium/([0-9]+)(?:\.json)?', Onemedium),
 								('/onedate/([0-9]+)(?:\.json)?', Onedate),
+								('/onevaluation/([0-9]+)(?:\.json)?', Onevaluation),
 								('/oneprovenance/([0-9]+)(?:\.json)?', Oneprovenance),
 								('/remove/([0-9]+)(?:\.json)?', Remove),
 								('/delete/([0-9]+)(?:\.json)?', Delit),
