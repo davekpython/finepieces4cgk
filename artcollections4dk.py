@@ -585,7 +585,7 @@ class Byvaluation(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler
 			if p.trash!="True":
 				not_trashed_list.append(p)		
 		val=4
-		sortedlist= sorter(not_trashed_list, val)
+		sortedlist= sorter(not_trashed_list, val, single=True)
 
 		for group in chunk(sortedlist, 4):
 			thelist.append(group)
