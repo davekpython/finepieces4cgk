@@ -218,7 +218,7 @@ def chunk(stack, n):
 	if buf:
 		yield buf
 		
-def sorter(posts, val, single=False):
+def sorter(posts, val, single=False, reverse=False):
 	artisttuplelist=list()
 	valuelist=list()
 	for p in posts:
@@ -233,7 +233,7 @@ def sorter(posts, val, single=False):
 				post_tup_list.append(tup)
 				artist_names_list.append(tup[1])
 		unsorted = post_tup_list
-	sortedtuplist=sorted(unsorted, key=lambda tup: tup[1].lower())
+	sortedtuplist=sorted(unsorted, key=lambda tup: tup[1].lower(), reverse=reverse)
 
 	return [posttup[0] for posttup in sortedtuplist]
 	
@@ -585,7 +585,7 @@ class Byvaluation(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler
 			if p.trash!="True":
 				not_trashed_list.append(p)		
 		val=4
-		sortedlist= sorter(not_trashed_list, val, single=True)
+		sortedlist= sorter(not_trashed_list, val, single=True, reverse=True)
 
 		for group in chunk(sortedlist, 4):
 			thelist.append(group)
