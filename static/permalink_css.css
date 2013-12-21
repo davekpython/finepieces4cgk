@@ -194,7 +194,7 @@
 	margin: -500px 5px 5px 10px;
 	display: inline-block;
 	border-style: None;
-	width: 75px;
+	width: 100px;
 	position: relative;
 }
 
@@ -283,9 +283,9 @@
 
 #submit	{
 	/* display: inline-block; */
-	position: relative;
+	position: absolute;
 	margin-left: -675px;
-	margin-top: -270px;
+	margin-top: -165px;
 	
 }
 
@@ -300,7 +300,7 @@
 	border-style: solid;
 	border-color: #000000;
 	margin-left: -140px;
-	margin-top: -265px;
+	margin-top: -215px;
 }
 
 #trashed	{
