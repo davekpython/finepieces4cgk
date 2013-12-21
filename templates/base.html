@@ -59,7 +59,11 @@
 				<p></p>
 				<a href="/byvaluation" class="left-links">By Valuation</a>
 				<p></p>
-				<a href="{{'/trashed'}}" class="left-links">Trashed</a>
+				{% if user %}
+				
+					<a href="{{'/trashed'}}" class="left-links">Trashed</a>
+					
+				{% endif %}
 			</div>
 		</div>
 	
