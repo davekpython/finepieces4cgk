@@ -11,7 +11,8 @@
 					{% for pic in p %}
 				
 						<td>
-							<a href="{{'/blog/%s' % (pic.key().id())}}"> 
+							<a href="{{'/blog/%s' % (pic.key().id())}}">
+								<img src= "/download-art-objects/{{pic.key()}}" alt="DgK Cafe" id="pic">
 								<div id="byartist">{{ pic.title }}</div>
 							</a>
 						</td>
