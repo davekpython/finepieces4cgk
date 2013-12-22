@@ -1,14 +1,14 @@
 $(document).ready(function() {
 	
 	$('#edit-artist input').hide();
-	$('#edit-artist').click(function() {
+	$('#edit-artist, #artist').click(function() {
 		$('#edit-artist input').show();
 		$('#edit-artist span').hide();
 		var value = $("#edit-artist span").text();
 		$("#edit-artist input").val(value);
 	});
 	$('#edit-subject input').hide();
-	$('#edit-subject').click(function() {
+	$('#edit-subject, #subject').click(function() {
 		$('#edit-subject input').show();
 		$('#edit-subject span').hide();
 		var value = $("#edit-subject span").text();
@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});	
 	
 	$('#edit-title input').hide();
-	$('#edit-title').click(function() {
+	$('#edit-title, #title').click(function() {
 		$('#edit-title input').show();
 		$('#edit-title span').hide();
 		var value = $("#edit-title span").text();
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	});	
 		
 	$('#edit-medium input').hide();
-	$('#edit-medium').click(function() {
+	$('#edit-medium, #medium').click(function() {
 		$('#edit-medium input').show();
 		$('#edit-medium span').hide();
 		var value = $("#edit-medium span").text();
@@ -32,7 +32,7 @@ $(document).ready(function() {
 	});	
 	
 	$('#edit-ob_date input').hide();
-	$('#edit-ob_date').click(function() {
+	$('#edit-ob_date, #ob_date').click(function() {
 		$('#edit-ob_date input').show();
 		$('#edit-ob_date span').hide();
 		var value = $("#edit-ob_date span").text();
@@ -40,7 +40,7 @@ $(document).ready(function() {
 	});		
 
 	$('#edit-provenance input').hide();
-	$('#edit-provenance').click(function() {
+	$('#edit-provenance, #provenance').click(function() {
 		$('#edit-provenance input').show();
 		$('#edit-provenance span').hide();
 		var value = $("#edit-provenance span").text();
@@ -48,7 +48,7 @@ $(document).ready(function() {
 	});		
 
 	$('#edit-valuation input').hide();
-	$('#edit-valuation').click(function() {
+	$('#edit-valuation, #valuation').click(function() {
 		$('#edit-valuation input').show();
 		$('#edit-valuation span').hide();
 		var value = $("#edit-valuation span").text();
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 	
 	$('#text_remark').hide();
-	$('#edit-remark').click(function() {
+	$('#edit-remark, #remark').click(function() {
 		$('#edit-remark').show();
 		$('#edit-remark span').hide();
 		var value = $("#edit-remark span").text();
