@@ -412,7 +412,7 @@ class Searching(BlogHandler):
 		thesearch = list()
 		
 		for p in posts:
-			if p.artist == action or p.subject == action or p.remark == action:
+			if p.artist == action or p.subject == action:
 				thesearch.append(p)
 
 		if thesearch:
