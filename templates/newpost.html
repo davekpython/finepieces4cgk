@@ -7,8 +7,24 @@
 		
 			<div id="newobject">
 				<div>Where is it?</div>
-				<img id="preview" src="placeholder.png" height="100px" width="100px" />
-				<input type="file" name="art_object" value="{{art_object}}" onchange="previewImage(this)" accept="image/*"/>
+				
+					<img id="uploadPreview" style="width: 100px; height: 100px;" />
+					<input id="uploadImage" type="file" name="art_object" onchange="PreviewImage();" />
+					<script type="text/javascript">
+
+						function PreviewImage() {
+							var oFReader = new FileReader();
+							oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+							oFReader.onload = function (oFREvent) {
+								document.getElementById("uploadPreview").src = oFREvent.target.result;
+							};
+						};
+
+					</script>
+				
+			<!-- 	<img id="preview" src="placeholder.png" height="100px" width="100px" />
+				<input type="file" name="art_object" value="{{art_object}}" onchange="previewImage(this)" accept="image/*"/> -->
 			</div>
 			<p></p>		
 		
