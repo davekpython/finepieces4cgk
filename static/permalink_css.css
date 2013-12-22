@@ -305,6 +305,8 @@
 	/* display: inline-block; */
 	width: 92px;
 	text-align: center;
+	padding-bottom: 3px;
+	padding-top: 2px;
 	font-weight: 700;
 	background-color: #F0F0F0;
 	color:#FF0000;
