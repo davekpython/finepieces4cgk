@@ -354,8 +354,9 @@ class Remove(BlogHandler):
 		post = Post.get(key)
 		post.trash= "True"
 		post.put()
-		#posts, age = top_posts(update = True)
-		memcache.delete('top')
+		posts, age = top_posts()
+		word = "top"
+		memcache.delete(word)
 		
 		self.redirect('/')
 
