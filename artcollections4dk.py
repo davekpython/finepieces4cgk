@@ -404,41 +404,46 @@ class Delit(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 class Searching(BlogHandler):
 	
 	def post(self):
-		
-		action = self.request.get('action')
+		upload_url = blobstore.create_upload_url('/search')
+		the_search = self.request.get('action')
 		
 		posts, age = top_posts()
 		thesearch = list()
 		thelist = list()
+		the_value=list()
 		
 		for p in posts:
-			if p.artist == action or p.title == action or p.medium == action or p.provenance == action or p.valuation == action or p.made == action:
+			if p.artist == the_search:
 				thesearch.append(p)
-			if p.title == action:
+
+			if p.title == the_search:
 				thesearch.append(p)
-			if p.medium == action:
+
+			if p.medium == the_search:
 				thesearch.append(p)	
-			if p.provenance == action:
+		
+			if p.provenance == the_search:
 				thesearch.append(p)	
-			if p.valuation == action:
+		
+			if p.valuation == the_search:
 				thesearch.append(p)	
-			if p.made == action:
+
+			if p.made == the_search:
 				thesearch.append(p)
 				
-		val=1
-		sortedlist= sorter(thesearch, val)
+		if thesearch:		
 
-		for group in chunk(sortedlist, 4):
-			thelist.append(group)
+			val=1
+			sortedlist= sorter(thesearch, val)
 
-		self.render("bytitle.html", posts = posts,  thelist = thelist )				
-					
-				
-		# if thesearch:
-			# self.render("SearchResults.html", thesearch = thesearch)
-		# else:
-			# error = "No Matches Found, Sorry!"
-			# self.render("SearchResults.html", error = error)
+			for group in chunk(sortedlist, 4):
+				thelist.append(group)
+
+			self.render("searchresults.html", posts = posts,  upload_url = upload_url, thelist = thelist, the_search=the_search)				
+						
+		else:
+			error = "No Matches Found, Sorry!"
+			self.render("SearchResults.html", error = error)
 			
 class NewPost(BlogHandler, BlobstoreUploadHandler):
 	def get(self):
