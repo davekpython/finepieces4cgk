@@ -66,6 +66,8 @@ body {
 	margin-top: 10px;
 	font-size: 15px;
 	font: Ariel;
+	text-decoration: none;
+	color:#000000;
 }
 
 #newpiece	{
@@ -228,6 +230,8 @@ body {
 	width: 200px;
 	padding: 5px;
 	border-style: none;
+	text-decoration: none;
+	color:#000000;
 }
 
 #artisttitle	{
@@ -238,6 +242,8 @@ body {
 	text-align: center;
 	font-size: 14px;
 	margin-left:22px;
+	text-decoration: none;
+	color:#000000;
 }
 
 #pic	{
