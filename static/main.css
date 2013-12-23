@@ -399,3 +399,9 @@ nav	{
 	background:#D8D8D8;
 	padding-top:10px;
 }
+
+#error	{
+	position: relative;
+	display: block;
+	text-align: center;
+}
