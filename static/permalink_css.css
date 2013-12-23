@@ -357,6 +357,11 @@
 	color: #000000;
 }
 
+#moreby span:hover	{
+	text-decoration: underline;
+	color: red;
+}
+
 #permfooter	{
 	/* clear:both; */
 	width: 98%;
