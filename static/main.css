@@ -38,7 +38,6 @@ body {
 	margin-top: 100px;
 	position: absolute;
 	padding-left: 5px;
-
 }
 
 #leftbankby	{
@@ -59,6 +58,11 @@ body {
 	padding-top: 5px;
 }
 
+#left-link1:hover	{
+	text-decoration: underline;
+	color: red;
+}
+
 .left-links	{
 	display:inline-block;
 	position: relative;
@@ -68,6 +72,11 @@ body {
 	font: Ariel;
 	text-decoration: none;
 	color:#000000;
+}
+
+.left-links:hover	{
+	text-decoration: underline;
+	color: red;
 }
 
 #newpiece	{
