@@ -4,14 +4,43 @@
 
 
 	
-	<ol>
+<!-- 	<ol>
 		{% for p in thesearch %}
 		
-		<li>{{ p.render() | safe }}</li>
+		<li>{{ p.artist }}</li>
 		
 			<br><br>
 		{% endfor %}
 	</ol>
+ -->	
+	
+<table id = "nameTable">
+			
+			{% for p in thelist %}
+
+				<tr>
+					{% for pic in p %}
+				
+						<td>
+							<a href="{{'/blog/%s' % (pic.key().id())}}">
+								<img src= "/download-art-objects/{{pic.key()}}" alt="DgK Cafe" id="pic">
+								<div id="byartist">{{ pic.title }}</div>
+							</a>
+						</td>
+		
+					{% endfor %}
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+	
+	
+	
+	
+	
 	
 	<div class="error">{{error}}</div>
 

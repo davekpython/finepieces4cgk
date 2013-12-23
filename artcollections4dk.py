@@ -354,7 +354,7 @@ class Remove(BlogHandler):
 		post = Post.get(key)
 		post.trash= "True"
 		post.put()
-		posts, age = top_posts()
+		# posts, age = top_posts()
 		word = "top"
 		memcache.delete(word)
 		
@@ -404,23 +404,41 @@ class Delit(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 class Searching(BlogHandler):
 	
 	def post(self):
-		logging.error("getttting")
 		
 		action = self.request.get('action')
-		logging.error(action)
-
+		
 		posts, age = top_posts()
 		thesearch = list()
+		thelist = list()
 		
 		for p in posts:
-			if p.artist == action or p.subject == action:
+			if p.artist == action or p.title == action or p.medium == action or p.provenance == action or p.valuation == action or p.made == action:
 				thesearch.append(p)
+			if p.title == action:
+				thesearch.append(p)
+			if p.medium == action:
+				thesearch.append(p)	
+			if p.provenance == action:
+				thesearch.append(p)	
+			if p.valuation == action:
+				thesearch.append(p)	
+			if p.made == action:
+				thesearch.append(p)
+				
+		val=1
+		sortedlist= sorter(thesearch, val)
 
-		if thesearch:
-			self.render("SearchResults.html", thesearch = thesearch)
-		else:
-			error = "No Matches Found, Sorry!"
-			self.render("SearchResults.html", thesearch=thesearch, error = error)
+		for group in chunk(sortedlist, 4):
+			thelist.append(group)
+
+		self.render("bytitle.html", posts = posts,  thelist = thelist )				
+					
+				
+		# if thesearch:
+			# self.render("SearchResults.html", thesearch = thesearch)
+		# else:
+			# error = "No Matches Found, Sorry!"
+			# self.render("SearchResults.html", error = error)
 			
 class NewPost(BlogHandler, BlobstoreUploadHandler):
 	def get(self):
