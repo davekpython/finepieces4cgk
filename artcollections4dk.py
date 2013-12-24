@@ -131,7 +131,7 @@ class Post(db.Model):
 	title = db.StringProperty(required = False)
 	medium = db.StringProperty(required = False)
 	provenance = db.StringProperty(required=False)
-	valuation = db.IntegerProperty(required=False)
+	valuation = db.StringProperty(required=False)
 	subject = db.StringProperty(required = False)
 	remark = db.TextProperty(required = False)
 	trash = db.StringProperty(required = False)
@@ -564,6 +564,7 @@ class NewPost(BlogHandler, BlobstoreUploadHandler):
 		made = self.request.get('made')
 		art_object = self.get_uploads('art_object')
 		art_object = art_object[0]
+		
 		
 		if artist:
 			p = Post(parent = blog_key(), artist = artist, title = title, medium = medium, provenance = provenance, valuation = valuation, made = made, subject = subject, remark = remark, art_object=art_object)
