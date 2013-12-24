@@ -422,7 +422,9 @@ nav	{
 	text-align: center;
 }
 
-/* #piecesTable	{
-	border: "2";
+#piecesTable	{
+	margin-left: 40px;
+	font: Helvetica;
+	font-size: 18px;
 
-} */
+}
