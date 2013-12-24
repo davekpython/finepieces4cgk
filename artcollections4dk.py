@@ -412,13 +412,10 @@ class ThePieces(BlogHandler):
 					active_objects.append(p)
 			val = 0
 			sortedlist= sorter(active_objects, val)		
-
-			for group in chunk(sortedlist, 5):
-				users.append(group)
 		
 			age = age_str(age)
-			if self.format == 'html':
-				self.render('front3.html', posts = posts, age=age, users = users)
+
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
 
 			
 class Searching(BlogHandler):
