@@ -417,6 +417,22 @@ class ThePieces(BlogHandler):
 
 			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
 
+class Pieces_Title(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
+		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 1
+			sortedlist= sorter(active_objects, val)		
+		
+			age = age_str(age)
+
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)			
+			
 			
 class Searching(BlogHandler):
 	
@@ -841,6 +857,7 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/newpost', NewPost),
 								('/search', Searching),
 								('/the_pieces', ThePieces),
+								('/pieces_title', Pieces_Title),
 								('/trashed', Trashed),
 								('/byartist', Byartist),
 								('/bytitle', Bytitle),
