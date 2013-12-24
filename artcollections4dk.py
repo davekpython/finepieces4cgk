@@ -433,6 +433,69 @@ class Pieces_Title(BlogHandler):
 
 			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)			
 			
+class Pieces_Medium(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
+		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 2
+			sortedlist= sorter(active_objects, val)		
+		
+			age = age_str(age)
+
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
+			
+class Pieces_Provenance(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
+		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 3
+			sortedlist= sorter(active_objects, val)		
+		
+			age = age_str(age)
+			
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
+			
+class Pieces_Valuation(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
+		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 4
+			sortedlist= sorter(active_objects, val, reverse=True)		
+		
+			age = age_str(age)
+			
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
+			
+class Pieces_Made(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
+		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 6
+			sortedlist= sorter(active_objects, val, reverse=True)		
+		
+			age = age_str(age)
+			
+			self.render('pieces.html', posts = posts, age=age, sortedlist = sortedlist)
 			
 class Searching(BlogHandler):
 	
@@ -625,7 +688,7 @@ class Bymade(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 			if p.trash!="True":
 				not_trashed_list.append(p)		
 		val=6
-		sortedlist= sorter(not_trashed_list, val, single=True)
+		sortedlist= sorter(not_trashed_list, val, single=True, reverse=True)
 
 		for group in chunk(sortedlist, 4):
 			thelist.append(group)
@@ -858,6 +921,10 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/search', Searching),
 								('/the_pieces', ThePieces),
 								('/pieces_title', Pieces_Title),
+								('/pieces_medium', Pieces_Medium),
+								('/pieces_provenance', Pieces_Provenance),
+								('/pieces_valuation', Pieces_Valuation),
+								('/pieces_made', Pieces_Made),
 								('/trashed', Trashed),
 								('/byartist', Byartist),
 								('/bytitle', Bytitle),
