@@ -3,8 +3,15 @@
 {% block content %}
 
 	
-	<table id = "nameTable">
-			
+	<table id = "piecesTable" border= "1" cellpadding= "10">
+		<th></th>
+		<th>Artist</th>
+		<th>Title</th>
+		<th>Medium</th>
+		<th>Date</th>
+		<th>Provenance</th>
+		<th>Valuation</th>
+									
 			{% for pic in sortedlist %}
 
 				<tr>
@@ -15,7 +22,7 @@
 							</a>
 						</td>
 						<td>
-							<div id="tableartist">{{ pic.artist }}</div>
+							<div id="tableartist" >{{ pic.artist }}</div>
 						</td>
 						<td>
 							<div id="tabletitle">{{ pic.title }}</div>
