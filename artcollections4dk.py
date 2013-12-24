@@ -131,7 +131,7 @@ class Post(db.Model):
 	title = db.StringProperty(required = False)
 	medium = db.StringProperty(required = False)
 	provenance = db.StringProperty(required=False)
-	valuation = db.StringProperty(required=False)
+	valuation = db.IntegerProperty(required=False)
 	subject = db.StringProperty(required = False)
 	remark = db.TextProperty(required = False)
 	trash = db.StringProperty(required = False)
