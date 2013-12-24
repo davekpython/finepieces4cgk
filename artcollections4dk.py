@@ -400,7 +400,27 @@ class Delit(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		# posts, age = top_posts(update = True)
 		
 		self.redirect('/')
+
+class ThePieces(BlogHandler):
+		def get(self):
+			active_objects=[]
+			users=[]
+			posts, age = top_posts()
 		
+			for p in posts:
+				if p.trash != "True":
+					active_objects.append(p)
+			val = 0
+			sortedlist= sorter(active_objects, val)		
+
+			for group in chunk(sortedlist, 5):
+				users.append(group)
+		
+			age = age_str(age)
+			if self.format == 'html':
+				self.render('front3.html', posts = posts, age=age, users = users)
+
+			
 class Searching(BlogHandler):
 	
 	def post(self):
@@ -823,6 +843,7 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/blog/([0-9]+)(?:\.json)?', PostPage),
 								('/newpost', NewPost),
 								('/search', Searching),
+								('/the_pieces', ThePieces),
 								('/trashed', Trashed),
 								('/byartist', Byartist),
 								('/bytitle', Bytitle),
