@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	<table id = "nameTable">
+			
+			{% for pic in sortedlist %}
+
+				<tr>
+					
+						<td>
+							<a href="{{'blog/%s' % (pic.key().id())}}"> 
+								<img src= "/download-art-objects/{{pic.key()}}" width=51px height = 38px alt="DgK Cafe" id="tablepic">
+							</a>
+						</td>
+						<td>
+							<div id="tableartist">{{ pic.artist }}</div>
+						</td>
+						<td>
+							<div id="tabletitle">{{ pic.title }}</div>
+						</td>
+						<td>
+							<div id="tablemedium">{{ pic.medium }}</div>
+						</td>
+						<td>
+							<div id="tablemade">{{ pic.made }}</div>
+						</td>
+						<td>
+							<div id="tableprovenance">{{ pic.provenance }}</div>
+						</td>
+						<td>
+							<div id="tablevaluation">{{ pic.valuation }}</div>
+						</td>
+
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+			
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}
