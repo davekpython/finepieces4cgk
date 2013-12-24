@@ -746,7 +746,6 @@ class Bymedium(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 			thelist.append(group)
 
 		self.render("bymedium.html", posts = posts, upload_url = upload_url, thelist = thelist )
-
 		
 class Bytitle(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 	def get(self):
