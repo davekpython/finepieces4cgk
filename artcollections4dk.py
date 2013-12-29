@@ -631,7 +631,7 @@ class Register(Signup):
 			u = User.register(self.username, self.password, self.email)
 			u.put()
 			self.login(u)
-			self.redirect('/welcome')
+			self.redirect('/')
 			
 class Login(BlogHandler):
 	def get(self):
@@ -661,6 +661,14 @@ class Welcome(BlogHandler):
 			self.render('welcome.html', username = self.user.name)
 		else:
 			self.redirect('/signup')
+			
+class Visitors(BlogHandler):
+	def get(self):
+		if self.user:
+			guests = User.all().order('-name')
+			guests = list(guests)
+			self.render('visitors.html', username = self.user.name, guests=guests)
+			
 
 class Trashed(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 	def get(self):
@@ -941,10 +949,11 @@ app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
 								('/delete/([0-9]+)(?:\.json)?', Delit),
 								('/dump_trash', dump_trash),
 								('/take_off_trashlist/([0-9]+)(?:\.json)?', take_off_list),
-								('/signup', Register),
+								('/david', Register),
 								('/login', Login),
 								('/logout', Logout),
 								('/welcome', Welcome),
+								('/visitors', Visitors),
 								('/flush', Flush),
 								('/download-art-objects/(?P<post_key>[-0-9a-zA-Z]+)', DownloadArtObject),
 								('/upload-art-objects', UploadArtObject),
