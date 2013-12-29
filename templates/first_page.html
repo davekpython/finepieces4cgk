@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Login</title>
+
+		<link type="text/css" rel="stylesheet" href="/static/opening.css" />
+	
+		<title>Da Collection</title>
+		
+	</head>
+	
+	<body>
+		<h2>Login</h2>
+			<p>	<img src="/static/images/bike_in_snow.jpg" alt="DgK Cafe" width="450" height="300" class="objectperm">	</p>
+			
+				<form class="logger" method="post">
+					<table>
+						<tr>
+							<td class="label">
+								Your Name
+							</td>
+							<td>
+								<input type="text" name="guestname" value="{{guestname}}">
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="label">
+								The Key
+							</td>
+							<td>
+								<input type="password" name="the_key" value="">
+							</td>
+						</tr>
+					</table>
+					
+					<div class="error">
+						{{error}}
+					</div>
+				
+					<input type="submit">
+			</form>
+
+	</body>
+	
+</html>
+
+				
