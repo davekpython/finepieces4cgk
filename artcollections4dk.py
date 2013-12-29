@@ -648,6 +648,20 @@ class Login(BlogHandler):
 		else:
 			msg = 'Invalid login'
 			self.render('login-form.html', error = msg)
+
+class Entrance(BlogHandler):
+	def get(self):
+		self.render('first_page.html')
+		
+	def post(self):
+		guestname = self.request.get('guestname')
+		the_key = self.request.get('the_key')
+					
+		if the_key == "38!2rasrabbitpatchf?g":
+			self.redirect('/')
+		else:
+			msg = 'Nope'
+			self.render('first_page.html', error = msg)
 			
 class Logout(BlogHandler):
 	def get(self):
