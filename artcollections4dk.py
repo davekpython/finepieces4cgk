@@ -358,7 +358,7 @@ class Remove(BlogHandler):
 		word = "top"
 		memcache.delete(word)
 		
-		self.redirect('/')
+		self.redirect('/main')
 
 class dump_trash(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 	def get(self):
@@ -374,7 +374,7 @@ class dump_trash(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler)
 			
 		# posts, age=top_posts(update=True)
 		memcache.delete('top')	
-		self.redirect('/')
+		self.redirect('/main')
 
 class take_off_list(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):		
 	def get(self, post_key):
@@ -399,7 +399,7 @@ class Delit(BlogHandler, BlobstoreDownloadHandler,  BlobstoreUploadHandler):
 		memcache.delete('top')
 		# posts, age = top_posts(update = True)
 		
-		self.redirect('/')
+		self.redirect('/main')
 
 class ThePieces(BlogHandler):
 		def get(self):
@@ -631,7 +631,7 @@ class Register(Signup):
 			u = User.register(self.username, self.password, self.email)
 			u.put()
 			self.login(u)
-			self.redirect('/')
+			self.redirect('/main')
 			
 class Login(BlogHandler):
 	def get(self):
@@ -644,7 +644,7 @@ class Login(BlogHandler):
 		u = User.login(username, password)	
 		if u:
 			self.login(u)
-			self.redirect('/')
+			self.redirect('/main')
 		else:
 			msg = 'Invalid login'
 			self.render('login-form.html', error = msg)
@@ -658,7 +658,7 @@ class Entrance(BlogHandler):
 		the_key = self.request.get('the_key')
 					
 		if the_key == "38!2rasrabbitpatchf?g":
-			self.redirect('/')
+			self.redirect('/main')
 		else:
 			msg = 'Nope'
 			self.render('first_page.html', error = msg)
@@ -667,7 +667,7 @@ class Logout(BlogHandler):
 	def get(self):
 		
 		self.logout()
-		self.redirect('/')
+		self.redirect('/main')
 					
 class Welcome(BlogHandler):
 	def get(self):
@@ -936,7 +936,8 @@ class Flush(BlogHandler):
 		self.redirect('/newpost')
 
 	
-app = webapp2.WSGIApplication([('/?(?:\.json)?', MainPage),
+app = webapp2.WSGIApplication([('/main', MainPage),
+								('/?(?:\.json)?', Entrance),
 								('/blog/?(?:\.json)?', BlogFront),
 								('/blog/([0-9]+)(?:\.json)?', PostPage),
 								('/newpost', NewPost),

@@ -368,3 +368,18 @@
 	height: 100px;
 	margin-top: 200px;
 }
+
+#artist-stuff	{
+	display: inline-block;
+	margin-left: 50px;
+}
+
+#med-stuff	{
+	display: inline-block;
+	margin-left: 24px;
+}
+
+#date-stuff	{
+	display: inline-block;
+	margin-left: 55px;
+}

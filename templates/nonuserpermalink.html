@@ -6,9 +6,11 @@
 	
 
 			<ul>
-				<li class="arts">Artist: <span class ="stuff">{{post.artist | safe}}</span></li>
+				<li class="arts">Artist: <span id ="artist-stuff">{{post.artist | safe}}</span></li>
 					
-				<li class="arts">Subject: <span class="stuff">{{post.subject | safe}}</span></li>
+				<li class="arts">Medium: <span id="med-stuff">{{post.medium | safe}}</span></li>
+					 
+				<li class="arts">Date: <span id="date-stuff">{{post.made | safe}}</span></li>					 
 					 
 		<!-- 		<li class="arts">Notes:	<span class="stuff">{{post.content | safe}}</span></li> -->
 
