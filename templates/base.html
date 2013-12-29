@@ -44,27 +44,44 @@
 		</header>
 	
 		<div id="leftbank">
-			<a href="/the_pieces" id="left-link1">The Pieces</a>
-			<p></p>
-			<div id="leftbankby">
-				<a href="/byartist" class="left-links">By Artist</a>
+			{% if user %}			
+				<a href="/the_pieces" id="left-link1">The Pieces</a>
 				<p></p>
-				<a href="/bytitle" class="left-links">By Title</a>
-				<p></p>
-				<a href="/bymedium" class="left-links">By Medium</a>
-				<p></p>
-				<a href="/bymade" class="left-links">By Date</a>
-				<p></p>
-				<a href="/byprovenance" class="left-links">By Provenance</a>
-				<p></p>
-				<a href="/byvaluation" class="left-links">By Valuation</a>
-				<p></p>
-				{% if user %}
-				
+				<div id="leftbankby">
+					<a href="/byartist" class="left-links">By Artist</a>
+					<p></p>
+					<a href="/bytitle" class="left-links">By Title</a>
+					<p></p>
+					<a href="/bymedium" class="left-links">By Medium</a>
+					<p></p>
+					<a href="/bymade" class="left-links">By Date</a>
+					<p></p>
+					<a href="/byprovenance" class="left-links">By Provenance</a>
+					<p></p>
+					<a href="/byvaluation" class="left-links">By Valuation</a>
+					<p></p>
 					<a href="{{'/trashed'}}" class="left-links">Trashed</a>
-					
-				{% endif %}
-			</div>
+				</div>
+				
+			{% else %}
+				<p id="left-link1">The Pieces</p>
+				<p></p>
+				<div id="leftbankby">
+					<a href="/byartist" class="left-links">By Artist</a>
+					<p></p>
+					<a href="/bytitle" class="left-links">By Title</a>
+					<p></p>
+					<a href="/bymedium" class="left-links">By Medium</a>
+					<p></p>
+					<a href="/bymade" class="left-links">By Date</a>
+					<p></p>
+					<a href="/byprovenance" class="left-links">By Provenance</a>
+					<p></p>
+				</div>
+
+			
+			{% endif %}
+			
 		</div>
 	
 		<div id="content">
