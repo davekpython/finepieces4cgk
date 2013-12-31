@@ -1,4 +1,4 @@
-application: artcollections4dk
+application: finepieces4cgk
 version: 1
 runtime: python27
 api_version: 1
@@ -13,7 +13,7 @@ handlers:
   static_dir: static
 
 - url: .*
-  script: artcollections4dk.app
+  script: finepieces4cgk.app
 
 libraries:
 - name: webapp2
