@@ -585,7 +585,7 @@ def valid_password(password):
 	
 EMAIL_RE  = re.compile(r'^[\S]+@[\S]+\.[\S]+$')
 def valid_email(email):
-	return not email or EMAIL.RE.match(email)
+	return email and EMAIL_RE.match(email)
 	
 class Signup(BlogHandler):
 	def get(self):
