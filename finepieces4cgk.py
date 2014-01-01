@@ -657,7 +657,8 @@ class Entrance(BlogHandler):
 		guestname = self.request.get('guestname')
 		the_key = self.request.get('the_key')
 					
-		if the_key == "38!2rasrabbitpatchf?g":
+		# if the_key == "38!2rasrabbitpatchf?g":
+		if the_key == "finepieces":
 			self.redirect('/main')
 		else:
 			msg = 'Nope'
