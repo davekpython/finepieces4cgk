@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	<table id = "nameTable">
+	
+			<p id=artisttitle> {{ the_search }} </p>	
+			
+			{% for p in thelist %}
+
+				<tr>
+					{% for pic in p %}
+				
+						<td>
+							<a href="{{'/blog/%s' % (pic.key().id())}}">
+								<img src= "/download-art-objects/{{pic.key()}}" alt="DgK Cafe" id="pic">
+								<div id="byartist">{{ pic.title }}</div>
+							</a>
+						</td>
+		
+					{% endfor %}
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+	
+	
+	
+	<div id="error">{{error}}</div>
+
+{% endblock %}

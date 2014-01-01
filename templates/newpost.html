@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2 id="finepiece">A New Fine Piece</h2>
+	
+		<form method="post" id="newpiece" action="{{ upload_url }}" enctype="multipart/form-data">
+		
+			<div id="newobject">
+				<div>Where is it?</div>
+				
+					<img id="uploadPreview" style="width: 100px; height: 100px;" />
+					<input id="uploadImage" type="file" name="art_object" onchange="PreviewImage();" />
+					<script type="text/javascript">
+
+						function PreviewImage() {
+							var oFReader = new FileReader();
+							oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+							oFReader.onload = function (oFREvent) {
+								document.getElementById("uploadPreview").src = oFREvent.target.result;
+							};
+						};
+
+					</script>
+				
+			<!-- 	<img id="preview" src="placeholder.png" height="100px" width="100px" />
+				<input type="file" name="art_object" value="{{art_object}}" onchange="previewImage(this)" accept="image/*"/> -->
+			</div>
+			<p></p>		
+		
+			<div id="newartist">
+				<div>Artist</div>
+				<input type="text" size="40" name="artist" value="{{artist}}">
+			</div>
+			
+			<p></p>
+			
+			<div id="newtitle">
+				<div>Title</div>
+				<input type="text" size="40" name="title" value="{{title}}">
+			</div>
+			<p></p>
+			<div id="newmedium">
+				<div>Medium</div>
+				<input type="text" size="40" name="medium" value="{{medium}}">
+			</div>
+			<p></p>
+			<div id="newob_date">
+				<div>Year Completed</div>
+				<input type="text" size="40" name="made" value="{{made}}">
+			</div>			
+			<p></p>	
+			<div id="newprovenance">
+				<div>Provenance</div>
+				<input type="text" size="40" name="provenance" value="{{provenance}}">
+			</div>
+			<p></p>	
+			<div id="newvaluation">
+				<div>Valuation</div>
+				<input type="text" size="40" name="valuation" value="{{valuation}}">
+			</div>
+			<p></p>	
+			<div id="newsubject">
+				<div>Subject</div>
+				<input type="text" size="40" name="subject" value="{{subject}}">
+			</div>
+			<p></p>
+
+			<div id="newremarks">
+				<div>Notes</div>
+				<textarea rows="10" cols="50" name="remark">{{remark}}</textarea>
+			</div>
+			<p></p>
+			<div id="newerror">{{error}}</div>
+			
+			<input id="newsubmit" type="submit" name = "submit" value = "Submit">
+		</form>
+		
+
+	{% endblock %}

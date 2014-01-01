@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+	<p>	<img src= "/download-art-objects/{{post.key()}}" alt="DgK Cafe" class="objectperm">	</p>
+	
+
+			<ul>
+				<li class="arts">Artist: <span class ="stuff">{{post.artist | safe}}</span></li>
+					
+				<li class="arts">Subject: <span class="stuff">{{post.subject | safe}}</span></li>
+					 
+				<li class="arts">Notes:	<span class="stuff">{{post.content | safe}}</span></li>
+
+			</ul>
+
+		</form>
+
+
+	
+
+
+
+	
+	<div class="ageplace">{{age}}</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<a href="{{'/dump_trash'}}" id="dump_trash">Empty The Trash</a>
+	
+	
+	
+	<table id = "nameTable">
+			
+			{% for p in thelist %}
+
+				<tr>
+					{% for pic in p %}
+				
+						<td>
+							<a href="{{'blog/%s' % (pic.key().id())}}">
+								<img src= "/download-art-objects/{{pic.key()}}" alt="DgK Cafe" id="pic">
+								<div id="byartist">{{ pic.artist }}</div>
+								<div id="byartist">{{ pic.trash }}</div>
+							</a>
+						
+							<a href="{{'take_off_trashlist/%s' % (pic.key().id())}}">Save It!</a>
+						</td>
+		
+					{% endfor %}
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+			
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<script type="text/javascript" src="/static/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="/static/main.css" />
+		<link type="text/css" rel="stylesheet" href="/static/permalink_css.css"/>
+		<script type='text/javascript' src='/static/script.js'></script>
+		<!-- <script type='text/javascript' src='/static/newscript.js'></script> -->
+	
+		<title>Fine Pieces</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="login-area">
+				<nav>
+					{% if user %}
+
+						<a class="login-link">{{user.name}} </a>
+						|
+						<a class = "login-link" href ="/logout">logout</a>	
+						|
+						<a class="login-link" href="/newpost">add a new fine piece</a>
+
+						<a href="/main" class="main-title">Fine Pieces</a>
+						
+						<form id="searchform" name="searchform" action="/search" method="post" >
+						
+							<input name = "action" value="{{action}}" maxlength="40" placeholder="Search Fine Pieces"></input>
+							<input class="submit" type="submit" value="Go" ></input>
+							
+						</form>
+
+					{% else %}
+						<a class="login-link" href="/login">login</a>
+						|
+						<!-- <a class="login-link" href="/signup">signup</a> -->
+						
+						<a href="/main" class="main-title1">Fine Pieces</a>
+						
+					{% endif %}
+				</nav>				
+			</div>
+		</header>
+	
+		<div id="leftbank">
+			{% if user %}			
+				<a href="/the_pieces" id="left-link1">The Pieces</a>
+				<p></p>
+				<div id="leftbankby">
+					<a href="/byartist" class="left-links">By Artist</a>
+					<p></p>
+					<a href="/bytitle" class="left-links">By Title</a>
+					<p></p>
+					<a href="/bymedium" class="left-links">By Medium</a>
+					<p></p>
+					<a href="/bymade" class="left-links">By Date</a>
+					<p></p>
+					<a href="/byprovenance" class="left-links">By Provenance</a>
+					<p></p>
+					<a href="/byvaluation" class="left-links">By Valuation</a>
+					<p></p>
+					<a href="{{'/trashed'}}" class="left-links">Trashed</a>
+				</div>
+				
+			{% else %}
+				<p id="left-link1">The Pieces</p>
+				<p></p>
+				<div id="leftbankby">
+					<a href="/byartist" class="left-links">By Artist</a>
+					<p></p>
+					<a href="/bytitle" class="left-links">By Title</a>
+					<p></p>
+					<a href="/bymedium" class="left-links">By Medium</a>
+					<p></p>
+					<a href="/bymade" class="left-links">By Date</a>
+					<p></p>
+					<a href="/byprovenance" class="left-links">By Provenance</a>
+					<p></p>
+				</div>
+
+			
+			{% endif %}
+			
+		</div>
+	
+		<div id="content">
+			{% block content %}
+			
+			{% endblock %}
+		</div>
+		
+	
+	</body>
+
+</html>

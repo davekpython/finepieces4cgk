@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	<table id = "nameTable">
+			
+			{% for p in thelist %}
+
+				<tr>
+					{% for pic in p %}
+				
+						<td>
+							<a href="{{'onedate/%s' % (pic.key().id())}}"> 
+								<div id="byartist">{{ pic.made }}</div>
+							</a>
+						</td>
+		
+					{% endfor %}
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+			
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	<table id = "piecesTable"  cellpadding= "10" border='1px' width="100%">
+		<th></th>
+		<th><a href="/the_pieces">Artist</a></th>
+		<th><a href="/pieces_title">Title</a></th>
+		<th><a href="/pieces_medium">Medium</a></th>
+		<th><a href="/pieces_made">Date</a></th>
+		<th><a href="/pieces_provenance">Provenance</a></th>
+		<th width="100px"><a href="/pieces_valuation">Valuation</a></th>
+									
+			{% for pic in sortedlist %}
+
+				<tr>
+					
+						<td>
+							<a href="{{'blog/%s' % (pic.key().id())}}"> 
+								<img src= "/download-art-objects/{{pic.key()}}" width=51px height = 38px alt="DgK Cafe" id="tablepic">
+							</a>
+						</td>
+						<td>
+							<div id="tableartist" >{{ pic.artist }}</div>
+						</td>
+						<td>
+							<div id="tabletitle">{{ pic.title }}</div>
+						</td>
+						<td>
+							<div id="tablemedium">{{ pic.medium }}</div>
+						</td>
+						<td>
+							<div id="tablemade">{{ pic.made }}</div>
+						</td>
+						<td>
+							<div id="tableprovenance">{{ pic.provenance }}</div>
+						</td>
+						<td>
+							<div id="tablevaluation"><b>$ </b>{{ pic.valuation }}</div>
+						</td>
+
+				</tr>
+				
+		
+			{% endfor %}
+
+
+	</table> 
+			
+
+
+	<div class = "ageplace"> {{age}} </div>
+	
+{% endblock %}

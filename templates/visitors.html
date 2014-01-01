@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Welcome</title>
+		
+		<link type="text/css" rel="stylesheet" href="/static/opening.css" />
+
+	</head>
+	
+	<body>
+		<h2 id="h2"  >Welcome, {{username}}</h2>
+		<br>
+		<br>
+		<table id = "nameTable">
+				
+
+				{% for p in guests %}
+
+					<tr>							
+							<td>		<div id="person">{{ p.name }}</div></td>
+							<td>		<div id="person">{{ p.pw_hash }}</div></td>
+							<td>		<div id="person">{{ p.email }}</div></td>
+								
+					</tr>
+					
+			
+				{% endfor %}
+
+
+		</table> 
+
+						
+
+
+	</body>
+</html>

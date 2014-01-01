@@ -1,0 +1,116 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    padding: 1px;
+    background-color: #707070;
+	/* background-image: url('/static/images/mymonarch.jpg') */
+
+}
+
+h2	{
+	text-align: center;
+}
+
+#h2 {
+	display:block;
+	text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+	position: relative;
+	color: #000000;
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#welcent	{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#welsubmit	{
+	display: inline-box;
+	font-size: 14;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#welsearch	{
+	display: inline-box;
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+}
+
+.logger	{
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    width: 300px;
+	height: 100px;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+    padding: 0px;
+    color: #000000;
+	border-style: solid;
+}
+
+.objectperm	{
+	display: block;
+	position: relative;
+	width: 512px;
+	height: 384px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2px;
+	border-style:solid;
+	
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  
+}
+
+label + label {
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+}
+
+input[type=text] {
+    width: 175px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: arial;
+	color: black
+}
+
+input[type=password] {
+    width: 175px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: arial;
+	color: black
+}
+
+
+input[type=submit] {
+  font-size: 14px;
+}
+
+textarea {
+  width: 500px;
+  height: 100px;
+  font-size: 17px;
+  font-family: arial;
+}
