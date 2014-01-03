@@ -16,8 +16,6 @@ from google.appengine.api import memcache
 from google.appengine.ext import db, blobstore
 from google.appengine.ext.webapp.blobstore_handlers import BlobstoreUploadHandler, BlobstoreDownloadHandler
 
-# itertools
-
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
 								autoescape = True)
@@ -585,11 +583,8 @@ def valid_password(password):
 	
 EMAIL_RE  = re.compile(r'^[\S]+@[\S]+\.[\S]+$')
 def valid_email(email):
-<<<<<<< HEAD
-	return not email or EMAIL.RE.match(email)
-=======
 	return email and EMAIL_RE.match(email)
->>>>>>> fac92585882b728380dcd5f2bccb982a0258052c
+
 	
 class Signup(BlogHandler):
 	def get(self):
@@ -660,13 +655,10 @@ class Entrance(BlogHandler):
 	def post(self):
 		guestname = self.request.get('guestname')
 		the_key = self.request.get('the_key')
-					
-<<<<<<< HEAD
-		if the_key == "38!2rasrabbitpatchf?g":
-=======
+
 		# if the_key == "38!2rasrabbitpatchf?g":
+
 		if the_key == "finepieces":
->>>>>>> fac92585882b728380dcd5f2bccb982a0258052c
 			self.redirect('/main')
 		else:
 			msg = 'Nope'
