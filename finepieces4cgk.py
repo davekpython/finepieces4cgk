@@ -585,7 +585,11 @@ def valid_password(password):
 	
 EMAIL_RE  = re.compile(r'^[\S]+@[\S]+\.[\S]+$')
 def valid_email(email):
+<<<<<<< HEAD
 	return not email or EMAIL.RE.match(email)
+=======
+	return email and EMAIL_RE.match(email)
+>>>>>>> fac92585882b728380dcd5f2bccb982a0258052c
 	
 class Signup(BlogHandler):
 	def get(self):
@@ -657,7 +661,12 @@ class Entrance(BlogHandler):
 		guestname = self.request.get('guestname')
 		the_key = self.request.get('the_key')
 					
+<<<<<<< HEAD
 		if the_key == "38!2rasrabbitpatchf?g":
+=======
+		# if the_key == "38!2rasrabbitpatchf?g":
+		if the_key == "finepieces":
+>>>>>>> fac92585882b728380dcd5f2bccb982a0258052c
 			self.redirect('/main')
 		else:
 			msg = 'Nope'
