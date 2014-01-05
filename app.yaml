@@ -15,8 +15,8 @@ handlers:
 - url: .*
   script: finepieces4cgk.app
 
-- url: /static/images(.*\.(bmp|gif|ico|jpeg|jpg|png))
-  static_files: static/images\1
+- url: /static/images
+  static_dir: static/images
   upload: static/images/(.*\.(bmp|gif|ico|jpeg|jpg|png))
   
 libraries:
