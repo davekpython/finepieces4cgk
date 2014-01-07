@@ -219,16 +219,18 @@ def chunk(stack, n):
 def sorter(posts, val, single=False, reverse=False):
 	artisttuplelist=list()
 	valuelist=list()
+	cleanlist=list()
 	# emptylist = list("1")
 	for p in posts:
 		valuelist = (p.artist, p.title, p.medium, p.provenance, p.valuation, p.subject, p.made)
+		
 		if val == 4 or val == 6:
-			if valuelist[val]=="":
-				# valuelist[val].append(emptylist)
+			if valuelist[val]=="":			
 				artisttuplelist.append((p, 1))
-			else:
+			else:				
 				artisttuplelist.append((p, int(valuelist[val])))
 		else:
+
 			artisttuplelist.append((p, valuelist[val]))
 	unsorted=artisttuplelist
 	artist_names_list = []
