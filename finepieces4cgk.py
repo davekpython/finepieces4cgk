@@ -551,7 +551,7 @@ class Searching(BlogHandler):
 						
 		else:
 			error = "No Matches Found, Sorry!"
-			self.render("SearchResults.html", error = error)
+			self.render("searchresults.html", error = error)
 			
 class NewPost(BlogHandler, BlobstoreUploadHandler):
 	def get(self):
